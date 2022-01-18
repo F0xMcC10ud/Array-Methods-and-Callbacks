@@ -79,8 +79,9 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(array,getFinalsCB, getYearsCB, getWinnersCB) {
-       const winners = getWinnersCB(array, getFinalsCB);
-       const years = getYearsCB(array, getFinalsCB);
+        const finals = getFinalsCB(array, getFinals)
+       const winners = getWinnersCB(array, getFinals);
+       const years = getYearsCB(array, getFinals);
        return winners.map(function(item, index) {
            return `In ${years[index]}, ${item} won the world cup!`;
        });
